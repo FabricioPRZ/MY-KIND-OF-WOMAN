@@ -1,0 +1,14 @@
+{
+  "name": "my-kind-of-woman",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Un álbum y un libro para nosotros, en HTML, CSS y JavaScript.",
+  "scripts": {
+    "dev": "python3 -m http.server 4173 --bind 127.0.0.1",
+    "build:book": "python3 scripts/build_book.py",
+    "test": "playwright test"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.64.1"
+  }
+}

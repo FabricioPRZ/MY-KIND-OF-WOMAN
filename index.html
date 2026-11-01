@@ -2,341 +2,264 @@
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Kind of Woman 🌸</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Great+Vibes&family=Jost:wght@300;400;500&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#fbf6f2">
+  <meta name="description"
+    content="Un pequeño lugar para nosotros: fotografías, cartas y una historia que todavía seguimos escribiendo.">
+  <title>My Kind of Woman · Nuestro pequeño universo</title>
+  <link rel="icon" href="public/flower.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@400;500;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="book.js" defer></script>
+  <script src="script.js" defer></script>
 </head>
 
 <body>
-
-    <canvas id="petals-canvas"></canvas>
-    <div class="cursor-dot"></div>
-    <div class="cursor-ring"></div>
-
-    <!-- ====== HERO ====== -->
-    <section class="hero" id="hero">
-        <div class="hero-orb o1"></div>
-        <div class="hero-orb o2"></div>
-        <div class="hero-orb o3"></div>
-        <div class="hero-blooms">
-            <span class="hb hb1">🌸</span>
-            <span class="hb hb2">🌷</span>
-            <span class="hb hb3">🌿</span>
-            <span class="hb hb4">🌸</span>
-            <span class="hb hb5">🌷</span>
-            <span class="hb hb6">✿</span>
-        </div>
-        <div class="hero-content">
-            <p class="hero-eyebrow rh">para ti, con todo mi amor</p>
-            <h1 class="hero-title rh">
-                <em class="hero-script">My Kind</em>
-                <span class="hero-serif">of Woman</span>
-            </h1>
-            <p class="hero-artist rh">— Mac DeMarco</p>
-            <div class="hero-rule rh">
-                <span class="rule-line"></span>
-                <span class="rule-bloom">❀</span>
-                <span class="rule-line"></span>
-            </div>
-            <p class="hero-lyric rh">
-                "You're my kind of woman,<br>you're so sweet to me"
-            </p>
-        </div>
-        <div class="scroll-nudge">
-            <div class="scroll-mouse">
-                <div class="scroll-wheel"></div>
-            </div>
-            <span>scroll</span>
-        </div>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+  <header class="site-header">
+    <a class="brand" href="#inicio" aria-label="My Kind of Woman, inicio"><img src="public/flower.svg" alt="" width="27"
+        height="27"> <span>My Kind of Woman</span></a>
+    <nav aria-label="Navegación principal"><a href="#nosotros">Nosotros</a><a href="#recuerdos">Recuerdos</a><a
+        href="#libro">El libro</a><a href="#carta">Para ti</a></nav>
+    <a class="header-note" href="#cancion">Nuestra canción <span aria-hidden="true">♫</span></a>
+  </header>
+  <main id="contenido">
+    <section class="hero wrap" id="inicio">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="tiny-flower" aria-hidden="true">✿</span> Para ti, con todo mi amor</p>
+        <h1>Mi lugar favorito<br>siempre vas a<br>ser <em>tú.</em></h1>
+        <p class="hero-description">Un pedacito de nosotros. De lo que hemos vivido,<br class="desktop-break"> de lo que
+          siento por ti y de todo lo que nos falta.</p>
+        <a class="button primary" href="#libro">Una historia para ti <span aria-hidden="true">↗</span></a>
+        <a class="text-link" href="#recuerdos">Perdernos en nuestros recuerdos <span aria-hidden="true">→</span></a>
+        <div class="hero-footnote"><span class="fine-line"></span> Hecho de momentos, escrito con amor.</div>
+      </div>
+      <div class="hero-album">
+        <img class="botanical botanical-hero" src="public/botanical.svg" alt="" width="210" height="330">
+        <figure class="hero-photo">
+          <div class="tape" aria-hidden="true"></div><img src="public/foto10.jpeg"
+            alt="Los dos sonriendo, juntos frente a la cámara" width="899" height="1599" fetchpriority="high">
+          <figcaption>mi persona favorita, siempre.</figcaption>
+        </figure>
+        <figure class="little-photo"><img src="public/foto16.jpeg"
+            alt="Los dos con mascarillas faciales, compartiendo un momento divertido" width="864" height="1152">
+          <figcaption>tú + yo ♡</figcaption>
+        </figure>
+        <span class="photo-note">hay tanto de ti<br>en todo lo bonito.</span><span class="hero-spark"
+          aria-hidden="true">✧</span>
+      </div>
+      <a class="hero-bottom" href="#nosotros"><span>Un lugar al que siempre puedes volver</span><span
+          aria-hidden="true">↓</span></a>
     </section>
-
-    <!-- ====== 01 SUS OJOS ====== -->
-    <section class="section bg-petal" id="eyes">
-        <div class="lily-accent la-left">
-            <svg viewBox="0 0 80 140" xmlns="http://www.w3.org/2000/svg" width="70">
-                <ellipse cx="40" cy="70" rx="13" ry="42" fill="rgba(232,134,154,.13)" transform="rotate(-22 40 70)" />
-                <ellipse cx="40" cy="70" rx="13" ry="42" fill="rgba(232,134,154,.10)" transform="rotate(22 40 70)" />
-                <ellipse cx="40" cy="70" rx="13" ry="42" fill="rgba(232,134,154,.08)" />
-                <line x1="40" y1="112" x2="40" y2="140" stroke="rgba(200,213,185,.7)" stroke-width="1.5" />
-            </svg>
+    <section class="intro-section" id="nosotros">
+      <div class="wrap intro-grid">
+        <div>
+          <p class="eyebrow">01 / Lo bonito de encontrarte</p>
+          <h2>De todas las cosas,<br><em>tú.</em></h2><img class="intro-flower" src="public/botanical.svg" alt=""
+            width="100" height="157" loading="lazy">
         </div>
-        <div class="inner-row">
-            <div class="txt-col reveal">
-                <span class="eyebrow-tag">01 — ella</span>
-                <h2 class="s-title">Sus ojos</h2>
-                <p class="s-body">Hay cosas en este mundo que no se pueden describir con palabras, y tus ojos son
-                    exactamente eso. Cada vez que te miro, siento que el tiempo se detiene solo para dejarme quedarme un
-                    poco más ahí.</p>
-                <p class="s-body">Son lo primero que noté de ti, y siguen siendo lo que más me enamora cada mañana. Hay
-                    universos enteros ahí adentro, y me pierdo en ellos con mucho gusto.</p>
-            </div>
-            <div class="img-col reveal d1">
-                <div class="pframe">
-                    <div class="pinner">
-                        <img class="ppreview loaded" src="public/foto1.jpeg" alt="Sus ojos">
-                    </div>
-                    <div class="pcaption">
-                        <span class="pcaption-bloom">❀</span>
-                        <span>sus ojos son mi lugar favorito</span>
-                    </div>
-                </div>
-            </div>
+        <div class="intro-body">
+          <p class="lead">Ella ama los lirios y yo la amo a ella.</p>
+          <p>Hay cosas que se quedan: un mensaje de cumpleaños, dos horas y media de camino, tres cartas y una pregunta.
+            Este lugar guarda un poco de todo lo que hemos vivido.</p>
+          <div class="love-details">
+            <article><span>01</span>
+              <h3>Tus ojos</h3>
+              <p>Hay universos enteros ahí adentro, y me pierdo en ellos con mucho gusto.</p>
+            </article>
+            <article><span>02</span>
+              <h3>Tu forma de ser</h3>
+              <p>Tu risa, tu voz, tu ternura. Lo bonita que eres, simplemente siendo tú.</p>
+            </article>
+            <article><span>03</span>
+              <h3>Tu inteligencia</h3>
+              <p>La forma en que piensas, cómo ves el mundo y cómo me haces querer ser mejor.</p>
+            </article>
+          </div>
         </div>
+      </div>
     </section>
-
-    <!-- ====== LYRIC 1 ====== -->
-    <section class="lyric-band band-blush">
-        <span class="band-bloom bl-l">❀</span>
-        <span class="band-bloom bl-r">✿</span>
-        <blockquote class="lq" data-lyric>"You're my kind of woman,<br>my, oh my, ¡what a girl!"</blockquote>
-        <p class="lcredit">Mac DeMarco — My Kind of Woman</p>
+    <section class="album-section wrap section-space" id="recuerdos">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">02 / Nuestro álbum</p>
+          <h2>Si pudiera guardar<br><em>un instante…</em></h2>
+        </div>
+        <p>Guardaría todos estos.<br>Los días especiales y los días que<br>se volvieron especiales contigo.</p>
+      </div>
+      <div class="album-toolbar">
+        <div class="filters" role="group" aria-label="Filtrar fotografías"><button class="filter active"
+            data-filter="all" aria-pressed="true">Todas <span>16</span></button><button class="filter" data-filter="new"
+            aria-pressed="false">Las más nuevas <span>8</span></button><button class="filter" data-filter="together"
+            aria-pressed="false">Nosotros</button><button class="filter" data-filter="her"
+            aria-pressed="false">Tú</button></div><span id="photo-count" class="small-note" aria-live="polite">16
+          recuerdos para volver a vivir</span>
+      </div>
+      <div class="photo-grid" id="photo-grid"></div>
+      <noscript>
+        <p>Activa JavaScript para explorar el álbum y usar el lector.</p>
+      </noscript>
+      <div class="album-ending"><span class="fine-line"></span><span>Y todos los que nos faltan ♡</span><span
+          class="fine-line"></span></div>
     </section>
-
-    <!-- ====== 02 CUANDO ERA NIÑA ====== -->
-    <section class="section bg-cream" id="childhood">
-        <div class="childhood-stars">
-            <span class="cs c1">✦</span><span class="cs c2">✧</span>
-            <span class="cs c3">✦</span><span class="cs c4">✧</span>
-            <span class="cs c5">✦</span><span class="cs c6">✧</span>
+    <section class="book-section" id="libro">
+      <div class="wrap book-layout">
+        <div class="book-art" aria-hidden="true">
+          <div class="book-cover"><span class="cover-top">FABRICIO PÉREZ</span><span class="cover-title">Todo lo
+              que<br>nunca supe<br><i>decirte.</i></span><img src="public/botanical.svg" alt="" width="110" height="173"
+              loading="lazy"><span class="cover-bottom">Una historia que sigue escribiéndose</span><span
+              class="book-ribbon"></span></div><span class="book-caption">nuestro siguiente capítulo todavía se está
+            escribiendo</span>
         </div>
-        <div class="inner-row row-rev">
-            <div class="img-col reveal d1">
-                <div class="pframe pframe-vintage">
-                    <div class="pinner">
-                        <img class="ppreview loaded" src="public/foto7.jpeg" alt="Cuando eras niña">
-                    </div>
-                    <div class="pcaption pcaption-vintage">
-                        <span class="pcaption-bloom">✦</span>
-                        <span>ya desde entonces la más bonita del mundo</span>
-                    </div>
-                </div>
-            </div>
-            <div class="txt-col reveal">
-                <span class="eyebrow-tag">02 — sus inicios</span>
-                <h2 class="s-title">Cuando eras niña</h2>
-                <p class="s-body">Me encanta imaginar cómo eras. Con esa misma chispa en los ojos, esa misma sonrisa que
-                    ilumina todo. Ya desde entonces, especial.</p>
-                <p class="s-body">La niña que fuiste construyó a la persona increíble que eres hoy, y me alegra mucho
-                    que ese camino te haya traído hasta aquí, hasta mí.</p>
-            </div>
+        <div class="book-copy">
+          <p class="eyebrow">03 / Entre estas páginas</p>
+          <h2>Hay cosas que<br>solo sé decirte<br><em>escribiendo.</em></h2>
+          <p>Estoy escribiendo nuestra historia. Para que puedas volver a ella despacito, quedarte con tus frases
+            favoritas y dejar un separador donde quieras regresar.</p>
+          <p id="manuscript-status" class="manuscript-status">Dedicatoria, prólogo y diez capítulos. Un libro que sigo
+            escribiendo, para que conozcas un poquito más de mí.</p><button class="button primary"
+            id="open-reader">Abrir nuestro libro <span aria-hidden="true">↗</span></button>
+          <p id="resume-label" class="small-note">Un rincón de lectura, solo para ti.</p>
+          <div class="reader-features"><span>♡ Resalta tus frases</span><span>⚑ Guarda tu lugar</span><span>✎ Deja tus
+              notas</span></div>
         </div>
+      </div>
     </section>
-
-    <!-- ====== 03 SU MANERA DE SER ====== -->
-    <section class="section bg-petal" id="personality">
-        <div class="lily-accent la-right">
-            <svg viewBox="0 0 80 140" xmlns="http://www.w3.org/2000/svg" width="70">
-                <ellipse cx="40" cy="70" rx="13" ry="42" fill="rgba(200,213,185,.2)" transform="rotate(-15 40 70)" />
-                <ellipse cx="40" cy="70" rx="13" ry="42" fill="rgba(200,213,185,.15)" transform="rotate(15 40 70)" />
-                <line x1="40" y1="112" x2="40" y2="140" stroke="rgba(200,213,185,.6)" stroke-width="1.5" />
-            </svg>
+    <section class="letter-section wrap section-space" id="carta">
+      <div class="letter-aside">
+        <p class="eyebrow">04 / De mí, para ti</p>
+        <h2>Por si hoy<br>no te lo<br><em>he dicho.</em></h2><span class="letter-heart" aria-hidden="true">♡</span>
+      </div>
+      <article class="letter-paper"><img class="letter-flower" src="public/flower.svg" alt="" width="54" height="54"
+          loading="lazy">
+        <p class="letter-greeting">Mi amor,</p>
+        <div id="letter-content">
+          <p>Desde que llegaste a mi vida, las cosas tienen un color diferente. No sé exactamente cómo explicarlo, pero
+            el mundo es un lugar más bonito cuando estás tú en él.</p>
+          <p>Me encanta cómo me tratas —con esa mezcla de dulzura y honestidad que te caracteriza—. Me encanta que pueda
+            ser yo mismo contigo, sin máscaras, sin filtros.</p>
+          <p>Me encantan tus ojos, esos que a veces me miran y me hacen olvidar lo que iba a decir. Me encanta tu
+            inteligencia, esa que me desafía y me hace querer ser mejor cada día.</p>
+          <p>Me encanta tu manera de ser. Toda entera, sin excepción.</p>
+          <p>Te quiero mucho, más de lo que sé expresar.</p>
         </div>
-        <div class="inner-row">
-            <div class="txt-col reveal">
-                <span class="eyebrow-tag">03 — su esencia</span>
-                <h2 class="s-title">Su manera<br>de ser</h2>
-                <p class="s-body">Hay algo en ti que hace que todo parezca más fácil. La forma en que hablas, la forma
-                    en que ríes, la manera en que me tratas... no tengo palabras suficientes para explicar lo afortunado
-                    que soy.</p>
-                <p class="s-body">Me cuidas con una ternura que pocas veces había sentido, y eso me hace quererte más
-                    cada día que pasa.</p>
-                <div class="tagrow reveal d2">
-                    <span class="ptag">tu risa</span>
-                    <span class="ptag">tu voz</span>
-                    <span class="ptag">tu ternura</span>
-                    <span class="ptag">tu forma de querer</span>
-                </div>
-            </div>
-            <div class="img-col reveal d1">
-                <div class="pframe">
-                    <div class="pinner">
-                        <img class="ppreview loaded" src="public/foto8.jpeg" alt="Su manera de ser">
-                    </div>
-                    <div class="pcaption">
-                        <span class="pcaption-bloom">❀</span>
-                        <span>así de bonita te ves siendo tú</span>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <p class="signature">Siempre, tuyo.</p>
+        <p class="letter-ps">P. D. Esta historia todavía tiene muchas páginas por escribir.</p>
+      </article>
     </section>
-
-    <!-- ====== LYRIC 2 ====== -->
-    <section class="lyric-band band-white">
-        <span class="band-bloom bl-c">❋</span>
-        <blockquote class="lq" data-lyric>"Please, baby,<br>show me you world"</blockquote>
-        <p class="lcredit">Mac DeMarco — My Kind of Woman</p>
+    <section class="song-section" id="cancion">
+      <div class="wrap song-layout">
+        <div class="video-frame"><video controls playsinline preload="none" poster="public/foto6.jpeg"
+            aria-label="Nuestro recuerdo en video">
+            <source src="public/video.mp4" type="video/mp4">Tu navegador no puede reproducir este video. <a
+              href="public/video.mp4">Descargar el video</a>
+          </video><span>un poquito de nosotros, en movimiento.</span></div>
+        <div class="song-copy">
+          <p class="eyebrow">05 / Así suena pensar en ti</p>
+          <h2>Esta canción<br><em>siempre será tuya.</em></h2>
+          <p>Me recuerda a ti cada vez que la escucho.<br>Y eso no va a cambiar.</p>
+          <div class="song-card"><span class="record" aria-hidden="true">♡</span>
+            <div>
+              <h3>My Kind of Woman</h3>
+              <p>Mac DeMarco</p>
+            </div><a href="https://open.spotify.com/track/6jgkEbmQ2F2onEqsEhiliL" target="_blank"
+              rel="noopener noreferrer" aria-label="Escuchar My Kind of Woman en Spotify (abre otra pestaña)">↗</a>
+          </div><button class="text-link" id="load-song">Escuchar aquí <span aria-hidden="true">♫</span></button>
+          <div id="spotify-player"></div>
+        </div>
+      </div>
     </section>
-
-    <!-- ====== 04 INTELIGENCIA (FEATURED) ====== -->
-    <section class="section-feat" id="intelligence">
-        <div class="feat-orb fo1"></div>
-        <div class="feat-orb fo2"></div>
-        <div class="feat-inner">
-            <div class="feat-txt reveal">
-                <span class="eyebrow-tag light-tag">04 — lo que más me atrae</span>
-                <h2 class="feat-title">Tu inteligencia<br><em>me tiene rendido</em></h2>
-                <p class="feat-body">Podría hablar de tus ojos o de tu sonrisa todo el día, pero hay algo que me tiene
-                    completamente enamorado: la forma en que piensas. Cómo ves el mundo, cómo conectas ideas, lo que
-                    dices y cómo lo dices.</p>
-                <p class="feat-body">Tu inteligencia me atrae de una manera que no sabía que era posible. Eres la
-                    persona más brillante que conozco, y me enorgullece estar a tu lado.</p>
-                <p class="feat-accent">eres la mujer más extraordinaria que he conocido.</p>
-            </div>
-            <div class="img-col reveal d1 feat-img">
-                <div class="pframe pframe-light">
-                    <div class="pinner">
-                        <img class="ppreview loaded" src="public/foto2.jpeg" alt="Tu inteligencia">
-                    </div>
-                    <div class="pcaption pcaption-light">
-                        <span class="pcaption-bloom">✦</span>
-                        <span>mi persona favorita en el mundo</span>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <section class="closing wrap"><img src="public/flower.svg" alt="" width="45" height="45" loading="lazy">
+      <p>Lo mejor de esta historia es que</p>
+      <h2>todavía la estamos <em>viviendo.</em></h2><span>Continuará, contigo.</span>
     </section>
-
-    <!-- ====== 05 NOSOTROS ====== -->
-    <section class="section-together" id="together">
-        <div class="together-header reveal">
-            <span class="eyebrow-tag centered-tag">05 — nosotros</span>
-            <h2 class="together-title">Los momentos<br><em>que atesoro</em></h2>
-            <div class="together-rule"><span>❀</span></div>
+  </main>
+  <footer class="site-footer wrap"><a class="brand" href="#inicio">My Kind of Woman</a>
+    <p>Hecho con todo el amor del mundo.</p><a href="#inicio">Volver al principio ↑</a>
+  </footer>
+  <dialog id="lightbox" class="lightbox" aria-label="Fotografía ampliada"><button class="icon-button lightbox-close"
+      id="close-lightbox" aria-label="Cerrar fotografía">×</button><button class="icon-button" id="previous-photo"
+      aria-label="Foto anterior">←</button>
+    <figure><img id="lightbox-image" alt="">
+      <figcaption id="lightbox-caption" aria-live="polite"></figcaption>
+    </figure><button class="icon-button" id="next-photo" aria-label="Foto siguiente">→</button>
+  </dialog>
+  <dialog id="reader" class="reader" aria-labelledby="reader-title" data-theme="paper">
+    <header class="reader-header">
+      <div><span class="eyebrow">Biblioteca de nosotros</span>
+        <h2 id="reader-title">Todo lo que nunca supe decirte</h2>
+      </div><button id="close-reader" class="button quiet">Cerrar <span aria-hidden="true">×</span></button>
+    </header>
+    <div class="reader-layout">
+      <aside class="reader-sidebar">
+        <details id="reader-index" open>
+          <summary>Índice y recuerdos</summary>
+          <nav id="chapter-list" aria-label="Índice del libro"></nav>
+          <div class="saved-heading">
+            <h3>Tus separadores</h3>
+          </div>
+          <div id="bookmark-list"></div>
+          <div class="saved-heading">
+            <h3>Tus frases</h3>
+          </div>
+          <div id="highlight-list"></div>
+          <p id="storage-status" class="storage-note">Tus marcas y notas se guardan en este navegador. Descarga una
+            copia para conservarlas.</p><button id="export-notes" class="text-link">Descargar mis recuerdos
+            ↓</button><label class="text-link restore-label" for="import-notes">Restaurar una copia ↑</label><input
+            type="file" id="import-notes" accept="application/json,.json" class="file-input">
+        </details>
+      </aside>
+      <div class="reading-area">
+        <div class="reader-toolbar">
+          <div class="font-controls" role="group" aria-label="Tamaño del texto"><button id="font-smaller"
+              aria-label="Reducir tamaño de letra">A−</button><button id="font-larger"
+              aria-label="Aumentar tamaño de letra">A+</button></div><label class="theme-control"><span
+              class="sr-only">Fondo de lectura</span><select id="reader-theme">
+              <option value="paper">Papel</option>
+              <option value="rose">Rosa</option>
+              <option value="night">Noche</option>
+            </select></label><label class="bookmark-color-label"><span class="sr-only">Color del separador</span><select
+              id="bookmark-color" aria-label="Color del separador">
+              <option value="pink">Rosa</option>
+              <option value="yellow">Dorado</option>
+              <option value="green">Salvia</option>
+              <option value="blue">Cielo</option>
+              <option value="lilac">Lavanda</option>
+            </select></label><button id="bookmark-page" aria-pressed="false">⚑ <span>Poner separador</span></button>
         </div>
-
-        <div class="together-grid">
-
-            <div class="tg-item tg-large reveal">
-                <div class="pframe">
-                    <div class="pinner ratio-land">
-                        <img class="ppreview loaded" src="public/foto5.jpeg" alt="Juntos">
-                    </div>
-                    <div class="pcaption">
-                        <span class="pcaption-bloom">❀</span>
-                        <span>contigo el tiempo pasa volando</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="tg-item tg-small reveal d1">
-                <div class="pframe">
-                    <div class="pinner">
-                        <img class="ppreview loaded" src="public/foto6.jpeg" alt="Juntos">
-                    </div>
-                    <div class="pcaption">
-                        <span class="pcaption-bloom">❀</span>
-                        <span>tú haces bonito cualquier lugar</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="tg-item tg-small reveal d1">
-                <div class="pframe">
-                    <div class="pinner">
-                        <img class="ppreview loaded" src="public/foto3.jpeg" alt="Juntos">
-                    </div>
-                    <div class="pcaption">
-                        <span class="pcaption-bloom">❀</span>
-                        <span>momentos que guardo en el corazón</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="tg-item tg-large reveal d2">
-                <div class="pframe">
-                    <div class="pinner ratio-land">
-                        <img class="ppreview loaded" src="public/foto4.jpeg" alt="Juntos">
-                    </div>
-                    <div class="pcaption">
-                        <span class="pcaption-bloom">❀</span>
-                        <span>gracias por dejarme estar en tu historia</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- VIDEO VERTICAL — fila completa, centrado -->
-            <div class="tg-item tg-full tg-video-wrap reveal">
-                <div class="pframe pframe-video">
-                    <div class="video-inner video-vertical">
-                        <video id="vplayer" class="video-preview loaded" src="public/video.mp4" autoplay loop muted
-                            playsinline></video>
-                    </div>
-                    <div class="pcaption">
-                        <span class="pcaption-bloom">🎞️</span>
-                        <span>nuestro momento favorito en movimiento</span>
-                    </div>
-                </div>
-            </div>
-
+        <div class="highlight-toolbar">
+          <p id="selection-help">Selecciona una frase y elige un color para resaltarla.</p>
+          <div role="group" aria-label="Color del resaltado"><button class="swatch swatch-yellow" data-color="yellow"
+              aria-label="Resaltar selección en amarillo" disabled></button><button class="swatch swatch-pink"
+              data-color="pink" aria-label="Resaltar selección en rosa" disabled></button><button
+              class="swatch swatch-green" data-color="green" aria-label="Resaltar selección en verde" disabled></button>
+          </div>
         </div>
-    </section>
-
-    <!-- ====== CARTA ====== -->
-    <section class="section-letter" id="letter">
-        <div class="letter-petals">
-            <span class="lp lp1">🌸</span>
-            <span class="lp lp2">🌷</span>
-            <span class="lp lp3">✿</span>
-            <span class="lp lp4">🌸</span>
-            <span class="lp lp5">❀</span>
+        <div class="reader-scroll" id="reader-scroll">
+          <div class="book-spread" id="book-page" tabindex="-1"></div>
+          <div class="page-note">
+            <div class="note-page-picker"><label for="note-page-select">Tu página</label><select id="note-page-select"
+                aria-label="Página para el separador y la nota"></select></div><label for="page-note">Lo que te hizo
+              sentir esta página</label><textarea id="page-note" rows="3" maxlength="10000"
+              placeholder="Este espacio es tuyo…"></textarea><span id="note-status" class="small-note"
+              aria-live="polite"></span>
+          </div>
         </div>
-        <div class="letter-card reveal">
-            <div class="lc-corner lc-tl">❀</div>
-            <div class="lc-corner lc-tr">❀</div>
-            <div class="lc-corner lc-bl">❀</div>
-            <div class="lc-corner lc-br">❀</div>
-            <span class="letter-stamp">🌸</span>
-            <p class="letter-greeting">Para ti,</p>
-            <div class="letter-body">
-                <p>Desde que llegaste a mi vida, las cosas tienen un color diferente. No sé exactamente cómo explicarlo,
-                    pero el mundo es un lugar más bonito cuando estás tú en él.</p>
-                <p>Me encanta cómo me tratas — con esa mezcla de dulzura y honestidad que te caracteriza. Me encanta que
-                    pueda ser yo mismo contigo, sin máscaras, sin filtros.</p>
-                <p>Me encantan tus ojos, esos que a veces me miran y me hacen olvidar lo que iba a decir. Me encanta tu
-                    inteligencia, esa que me desafía y me hace querer ser mejor cada día.</p>
-                <p>Me encanta tu manera de ser. Toda entera, sin excepción.</p>
-                <p class="closing-line">Te quiero mucho, más de lo que sé expresar.</p>
-            </div>
-            <p class="letter-sign">Siempre, tuyo 🌸</p>
-            <div class="letter-pd">
-                <em>P.D: esta canción me recuerda a ti cada vez que la escucho y siempre va a ser tuya mi amor.</em>
-            </div>
-        </div>
-    </section>
-
-    <!-- ====== SONG DEDICATION ====== -->
-    <section class="section-song">
-        <div class="song-container reveal">
-            <span class="eyebrow-tag centered-tag">para ti</span>
-            <h2 class="song-title">Esta canción siempre será tuya</h2>
-
-            <iframe style="border-radius:12px"
-                src="https://open.spotify.com/embed/track/6jgkEbmQ2F2onEqsEhiliL?utm_source=generator" width="100%"
-                height="152" frameBorder="0" allowfullscreen=""
-                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy">
-            </iframe>
-
-            <p class="song-caption">My Kind of Woman — Mac DeMarco</p>
-        </div>
-    </section>
-
-    <!-- ====== FOOTER ====== -->
-    <footer class="footer">
-        <div class="footer-blooms">
-            <span>🌸</span><span>🌷</span><span>🤍</span><span>🌸</span><span>🌷</span>
-        </div>
-        <p class="footer-script">Hecho con todo el amor del mundo</p>
-        <div class="footer-heart">♡</div>
-    </footer>
-
-    <script src="script.js"></script>
+        <footer class="reader-footer">
+          <div class="page-navigation"><button id="previous-page" class="button quiet">← Anterior</button><span
+              id="page-number" aria-live="polite"></span><button id="next-page" class="button quiet">Siguiente
+              →</button></div><progress id="reading-progress" value="0" max="100"
+            aria-label="Progreso de lectura"></progress>
+        </footer>
+      </div>
+    </div>
+  </dialog>
+  <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
 </body>
 
 </html>
