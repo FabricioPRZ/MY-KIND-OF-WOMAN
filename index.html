@@ -15,8 +15,10 @@
     href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@400;500;600&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="reader.css">
   <script src="book.js" defer></script>
   <script src="script.js" defer></script>
+  <script src="reader.js" defer></script>
 </head>
 
 <body>
@@ -122,18 +124,94 @@
           <p>Estoy escribiendo nuestra historia. Para que puedas volver a ella despacito, quedarte con tus frases
             favoritas y dejar un separador donde quieras regresar.</p>
           <p id="manuscript-status" class="manuscript-status">Dedicatoria, prólogo y diez capítulos. Un libro que sigo
-            escribiendo, para que conozcas un poquito más de mí.</p><button class="button primary"
-            id="open-reader">Abrir nuestro libro <span aria-hidden="true">↗</span></button>
+            escribiendo, para que conozcas un poquito más de mí.</p><button class="button primary" id="open-reader">Leer
+            nuestro libro <span aria-hidden="true">↗</span></button>
           <p id="resume-label" class="small-note">Un rincón de lectura, solo para ti.</p>
           <div class="reader-features"><span>♡ Resalta tus frases</span><span>⚑ Guarda tu lugar</span><span>✎ Deja tus
               notas</span></div>
         </div>
       </div>
+
+      <section id="reader" class="inline-reader" aria-labelledby="reader-title" data-theme="paper">
+        <header class="reading-heading">
+          <div>
+            <p class="eyebrow">Biblioteca de nosotros</p>
+            <h3 id="reader-title">Todo lo que nunca supe decirte</h3>
+            <p class="reading-byline">Fabricio Pérez · Una historia que sigue</p>
+          </div>
+          <a href="#libro" class="text-link">Volver a la portada ↑</a>
+        </header>
+        <details id="reader-index" class="reading-index">
+          <summary>Índice y mis recuerdos <span aria-hidden="true">＋</span></summary>
+          <div class="reading-index-grid">
+            <nav id="chapter-list" aria-label="Índice del libro"></nav>
+            <div class="reading-collections">
+              <h4>Tus separadores</h4>
+              <div id="bookmark-list"></div>
+              <h4>Tus frases</h4>
+              <div id="highlight-list"></div>
+              <h4>Tus notas</h4>
+              <div id="notes-list"></div>
+              <p id="storage-status" class="storage-note">Tus marcas y notas se guardan en este navegador.</p>
+              <button id="export-notes" class="text-link">Descargar mis recuerdos ↓</button>
+              <label class="text-link" for="import-notes">Restaurar una copia ↑</label><input type="file"
+                id="import-notes" accept="application/json,.json" class="file-input">
+            </div>
+          </div>
+        </details>
+        <div class="reading-tools">
+          <div class="reading-preferences">
+            <div class="reading-fonts" role="group" aria-label="Tamaño del texto"><button id="font-smaller"
+                aria-label="Reducir tamaño de letra">A−</button><button id="font-larger"
+                aria-label="Aumentar tamaño de letra">A+</button></div>
+            <label><span>Fondo</span><select id="reader-theme">
+                <option value="paper">Papel</option>
+                <option value="rose">Rosa</option>
+                <option value="night">Noche</option>
+              </select></label>
+            <label><span>Separador</span><select id="bookmark-color" aria-label="Color del separador">
+                <option value="pink">Rosa</option>
+                <option value="yellow">Dorado</option>
+                <option value="green">Salvia</option>
+                <option value="blue">Cielo</option>
+                <option value="lilac">Lavanda</option>
+              </select></label>
+          </div>
+          <div class="reading-bookmark-tools"><label class="page-choice"><span>Página</span><select
+                id="note-page-select" aria-label="Página para el separador y la nota"></select></label><button
+              id="bookmark-page" class="reading-bookmark" aria-pressed="false">⚑ <span>Poner separador</span></button>
+          </div>
+        </div>
+        <div class="reading-highlighter">
+          <p id="selection-help">Selecciona una frase para resaltarla.</p>
+          <div role="group" aria-label="Color del resaltado"><button class="swatch swatch-yellow"
+              data-highlight-color="yellow" aria-label="Resaltar selección en amarillo" disabled></button><button
+              class="swatch swatch-pink" data-highlight-color="pink" aria-label="Resaltar selección en rosa"
+              disabled></button><button class="swatch swatch-green" data-highlight-color="green"
+              aria-label="Resaltar selección en verde" disabled></button></div>
+        </div>
+        <div class="book-stage" id="reader-scroll">
+          <div class="bound-book" id="book-page" tabindex="-1" aria-label="Páginas del libro"></div>
+          <p id="pagination-status" class="pagination-status" role="status">Preparando tus páginas…</p>
+        </div>
+        <footer class="reading-navigation">
+          <div><button id="previous-page" class="button quiet" aria-label="Página anterior">←
+              <span>Anterior</span></button><span id="page-number" aria-live="polite"></span><button id="next-page"
+              class="button quiet" aria-label="Página siguiente"><span>Siguiente</span> →</button></div><progress
+            id="reading-progress" value="0" max="100" aria-label="Progreso de lectura"></progress>
+        </footer>
+        <details class="reading-note" id="note-panel">
+          <summary>✎ Lo que te hizo sentir esta página</summary><label for="page-note" id="note-page-label">Tu
+            nota</label><textarea id="page-note" rows="3" maxlength="10000"
+            placeholder="Este espacio es tuyo…"></textarea>
+          <p id="note-status" class="small-note" aria-live="polite"></p>
+        </details>
+      </section>
     </section>
     <section class="letter-section wrap section-space" id="carta">
       <div class="letter-aside">
         <p class="eyebrow">04 / De mí, para ti</p>
-        <h2>Por si hoy<br>no te lo<br><em>he dicho.</em></h2><span class="letter-heart" aria-hidden="true">♡</span>
+        <h2>Por si hoy<br> no te lo<br><em> he dicho.</em></h2><span class="letter-heart" aria-hidden="true">♡</span>
       </div>
       <article class="letter-paper"><img class="letter-flower" src="public/flower.svg" alt="" width="54" height="54"
           loading="lazy">
@@ -158,7 +236,7 @@
             aria-label="Nuestro recuerdo en video">
             <source src="public/video.mp4" type="video/mp4">Tu navegador no puede reproducir este video. <a
               href="public/video.mp4">Descargar el video</a>
-          </video><span>un poquito de nosotros, en movimiento.</span></div>
+          </video><span>un poquito de nosotros.</span></div>
         <div class="song-copy">
           <p class="eyebrow">05 / Así suena pensar en ti</p>
           <h2>Esta canción<br><em>siempre será tuya.</em></h2>
@@ -180,7 +258,7 @@
     </section>
   </main>
   <footer class="site-footer wrap"><a class="brand" href="#inicio">My Kind of Woman</a>
-    <p>Hecho con todo el amor del mundo.</p><a href="#inicio">Volver al principio ↑</a>
+    <a href="#inicio">Volver al principio ↑</a>
   </footer>
   <dialog id="lightbox" class="lightbox" aria-label="Fotografía ampliada"><button class="icon-button lightbox-close"
       id="close-lightbox" aria-label="Cerrar fotografía">×</button><button class="icon-button" id="previous-photo"
@@ -189,76 +267,7 @@
       <figcaption id="lightbox-caption" aria-live="polite"></figcaption>
     </figure><button class="icon-button" id="next-photo" aria-label="Foto siguiente">→</button>
   </dialog>
-  <dialog id="reader" class="reader" aria-labelledby="reader-title" data-theme="paper">
-    <header class="reader-header">
-      <div><span class="eyebrow">Biblioteca de nosotros</span>
-        <h2 id="reader-title">Todo lo que nunca supe decirte</h2>
-      </div><button id="close-reader" class="button quiet">Cerrar <span aria-hidden="true">×</span></button>
-    </header>
-    <div class="reader-layout">
-      <aside class="reader-sidebar">
-        <details id="reader-index" open>
-          <summary>Índice y recuerdos</summary>
-          <nav id="chapter-list" aria-label="Índice del libro"></nav>
-          <div class="saved-heading">
-            <h3>Tus separadores</h3>
-          </div>
-          <div id="bookmark-list"></div>
-          <div class="saved-heading">
-            <h3>Tus frases</h3>
-          </div>
-          <div id="highlight-list"></div>
-          <p id="storage-status" class="storage-note">Tus marcas y notas se guardan en este navegador. Descarga una
-            copia para conservarlas.</p><button id="export-notes" class="text-link">Descargar mis recuerdos
-            ↓</button><label class="text-link restore-label" for="import-notes">Restaurar una copia ↑</label><input
-            type="file" id="import-notes" accept="application/json,.json" class="file-input">
-        </details>
-      </aside>
-      <div class="reading-area">
-        <div class="reader-toolbar">
-          <div class="font-controls" role="group" aria-label="Tamaño del texto"><button id="font-smaller"
-              aria-label="Reducir tamaño de letra">A−</button><button id="font-larger"
-              aria-label="Aumentar tamaño de letra">A+</button></div><label class="theme-control"><span
-              class="sr-only">Fondo de lectura</span><select id="reader-theme">
-              <option value="paper">Papel</option>
-              <option value="rose">Rosa</option>
-              <option value="night">Noche</option>
-            </select></label><label class="bookmark-color-label"><span class="sr-only">Color del separador</span><select
-              id="bookmark-color" aria-label="Color del separador">
-              <option value="pink">Rosa</option>
-              <option value="yellow">Dorado</option>
-              <option value="green">Salvia</option>
-              <option value="blue">Cielo</option>
-              <option value="lilac">Lavanda</option>
-            </select></label><button id="bookmark-page" aria-pressed="false">⚑ <span>Poner separador</span></button>
-        </div>
-        <div class="highlight-toolbar">
-          <p id="selection-help">Selecciona una frase y elige un color para resaltarla.</p>
-          <div role="group" aria-label="Color del resaltado"><button class="swatch swatch-yellow" data-color="yellow"
-              aria-label="Resaltar selección en amarillo" disabled></button><button class="swatch swatch-pink"
-              data-color="pink" aria-label="Resaltar selección en rosa" disabled></button><button
-              class="swatch swatch-green" data-color="green" aria-label="Resaltar selección en verde" disabled></button>
-          </div>
-        </div>
-        <div class="reader-scroll" id="reader-scroll">
-          <div class="book-spread" id="book-page" tabindex="-1"></div>
-          <div class="page-note">
-            <div class="note-page-picker"><label for="note-page-select">Tu página</label><select id="note-page-select"
-                aria-label="Página para el separador y la nota"></select></div><label for="page-note">Lo que te hizo
-              sentir esta página</label><textarea id="page-note" rows="3" maxlength="10000"
-              placeholder="Este espacio es tuyo…"></textarea><span id="note-status" class="small-note"
-              aria-live="polite"></span>
-          </div>
-        </div>
-        <footer class="reader-footer">
-          <div class="page-navigation"><button id="previous-page" class="button quiet">← Anterior</button><span
-              id="page-number" aria-live="polite"></span><button id="next-page" class="button quiet">Siguiente
-              →</button></div><progress id="reading-progress" value="0" max="100"
-            aria-label="Progreso de lectura"></progress>
-        </footer>
-      </div>
-    </div>
-  </dialog>
+
   <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
 </body>
 
